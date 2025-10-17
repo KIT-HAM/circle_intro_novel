@@ -1,0 +1,186 @@
+;-----------------------------------------------------------------------
+;無線部サークル紹介
+;コンパイラの入手先: https://bq.f5.si/?Page=novelcompiler
+;-----------------------------------------------------------------------
+
+;宣言
+@define TITLE 北見工大無線部
+@define SPEED 80
+@chara buchou sc 部長
+
+;-----------------------------------------------------------------------
+;タイトル画面
+;-----------------------------------------------------------------------
+[title]
+@clear
+@menu_button false
+@serif_hide
+@background_image room_c.jpg
+@html <div style="padding:1em;color:#fff;"><h1>北見工大無線部</h1></div>
+@<button> goto="game_start" text="スタート" class="black" style="width:15em;font-size:1.5em;"
+@<button> goto="member" text="部員紹介" class="black" style="width:15em;margin-top:1em;font-size:1.5em;"
+@<button> goto="q_and_a" text="よくある質問" class="black" style="width:15em;margin-top:1em;font-size:1.5em;"
+@<button> menu="load" text="続きから" class="black" style="width:15em;margin-top:1em;font-size:1.5em;"
+@stop
+
+;-----------------------------------------------------------------------
+;スタート
+;-----------------------------------------------------------------------
+[game_start]
+@clear
+@menu_button true
+
+@chara_show buchou a.png 1
+
+#部長
+訪問有難う御座います。
+期末試験があった方は、お疲れ様でした。
+さて、夏休みになりました。無線部の定例活動は一旦お休みです。
+この半年を振り返ってみると、初物ばかりでした。まず部員同士が集まること自体が無線部始まって以来初の快挙です。
+しかも、学祭の企画に参加したのも初めてです。当日はお越しいただいた方々、有難う御座いました。
+いや～今年になってから一気に色々やりました。しかし、まだやるべきことがあります。
+そう、<b><u>開局申請</u></b>です。やっと予算が確保できたのでいよいよです。
+まだ少々問題が残っていますが、今年度には開局出来るはずです。出来ないと困ります！
+
+#
+出来なかったらどうすんの～？
+
+#部長
+まず「出来る！」と仮定するところから始まりです。出来ないことを考えて何もしないよりは、出来ると思った方が良いです。
+実は、学祭の参加申請も、ろくに部員が集まる前に提出して「いざとなればその時だ」という具合だったりします。
+部員の方々には半ば強制したようで申し訳ないですが、、、。
+振り返りはこれくらいにしておきます。
+最後に、電波や通信に興味のあるそこの君！ <b style="font-size:1.2em;">今からでも遅くない！</b>
+入部はいつでも受け付けています。興味のある方は、部のメールアドレスかお問合せフォームでお知らせください。
+以上です。
+
+@chara_hide buchou 1
+@goto title
+
+;-----------------------------------------------------------------------
+;部員紹介
+;このセクションに追記します。キャラの表示はstatic/chara/ 以下に透過png画像を用意します
+;-----------------------------------------------------------------------
+[member]
+@clear
+@menu_button true
+
+;誰も編集しないので準備中扱いにする
+準備中です。しばらくお待ち下さい。
+@goto title
+
+
+#部長
+無線部の部員紹介です。
+
+まず、私は2025年度の部長です。2年生です。部員の大半が私よりも年上です。なんで部長になったんだか。
+因みに、1年生の後期の期末試験直後に3級アマチュア無線免許の受験をして免許を取得しました。
+大学の勉強よりも無線の勉強の方が多くやっていました。あれでよく単位を落とさなかったものです。
+無線部をこれからもよろしくお願いします。
+
+#
+
+
+
+
+
+@goto title
+
+;-----------------------------------------------------------------------
+;よくある質問
+;-----------------------------------------------------------------------
+[q_and_a]
+@clear
+@menu_button true
+
+@chara_show buchou a.png 1
+
+#部長
+よくある質問Q and Aです。
+
+@chara_hide buchou 1
+
+[qa1]
+@serif_hide
+@<button> goto="a1-1" text="アマチュア無線とは" style="width:12em;margin-left:1em;margin-top:1em;" class="black"
+@<button> goto="a1-2" text="部員はどれくらい？" style="width:12em;margin-left:1em;margin-top:1em;" class="black"
+@<button> goto="a1-3" text="活動頻度は？" style="width:12em;margin-left:1em;margin-top:1em;" class="black"
+@<button> goto="a1-4" text="部費は本当に無い？" style="width:12em;margin-left:1em;margin-top:1em;" class="black"
+@<button> goto="qa2" text="次へ" style="width:12em;position:absolute;top:1em;left:15em;" class="black"
+@<button> goto="title" text="タイトルに戻る" style="width:12em;position:absolute;top:5em;left:15em;" class="black"
+@stop
+[qa2]
+@serif_hide
+@<button> goto="a2-1" text="兼部できますか" style="width:12em;margin-left:1em;margin-top:1em;" class="black"
+@<button> goto="a2-2" text="体験ありますか" style="width:12em;margin-left:1em;margin-top:1em;" class="black"
+@<button> goto="a2-3" text="JA8YCXとの関係は" style="width:12em;margin-left:1em;margin-top:1em;" class="black"
+@<button> goto="a2-4" text="顧問の干渉は" style="width:12em;margin-left:1em;margin-top:1em;" class="black"
+@<button> goto="qa1" text="前へ" style="width:12em;position:absolute;top:1em;left:15em;" class="black"
+@<button> goto="title" text="タイトルに戻る" style="width:12em;position:absolute;top:5em;left:15em;" class="black"
+@stop
+
+
+[a1-1]
+@chara_show buchou a.png 1
+法律では「金銭上の利益のためではなく、専ら個人的に無線技術に興味を持ち、免許状を許可された者が行う自己訓練、通信及び技術研究のための無線通信業務」となっています。
+要するに、非営利目的で運用する無線のことです。
+トランシーバーの通信などを想像していただけると分かりやすいかと思います。
+もちろん、電力や周波数によって免許が必要になります。
+ただし、よほど大電力を扱わない限り、3級や4級のアマチュア無線技士で十分です。
+なお、モールス符号の通信(電信)をするには3級以上が必要です。
+正直なところ、私自身も、正確に理解しているわけではありません。
+@chara_hide buchou 1
+@goto qa1
+[a1-2]
+@chara_show buchou a.png 1
+無線部の部員は、2025年10月現在、学部生が3人、学院生が3人の合計6名です。
+因みに部長は学部生です。
+@chara_hide buchou 1
+@goto qa1
+[a1-3]
+@chara_show buchou a.png 1
+一週間に一回程度です。たいてい毎週火曜日です。(2025年後期)
+部員の予定に合わせて活動頻度や曜日などは変えます。
+不定期に部室で作業をすることもあります。
+@chara_hide buchou 1
+@goto qa1
+[a1-4]
+@chara_show buchou a.png 1
+はい。いわゆる「部費」は徴収していません。
+ただし、一切出費しなくて済むとは限りません。
+もちろん、助成金などが間に合わなかったり、満額出ない事情があると部費を徴収する場合があります。
+たとえば、免許を取得するには検定料や交通費がかかります。
+あるいは、打ち上げをするならば、当事者で割り勘になります。
+つまり、部に対してお金を収める必要がないということです。
+@chara_hide buchou 1
+@goto qa1
+[a2-1]
+@chara_show buchou a.png 1
+もちろん、兼部できますよ。むしろ、どんどん兼部して知見を広めてください
+え？　おすすめのサークル？ 情報処理技術研究会とかどうですか？
+うちの部員にも、そこと兼部している方が何名かいらっしゃいますよ。
+あと、航空部と兼部している部員もいますね。
+@chara_hide buchou 1
+@goto qa2
+[a2-2]
+@chara_show buchou a.png 1
+いつでもどうぞ〜
+、、、と言いたいところですが、活動場所が固定ではないので事前に連絡をください。
+来る者拒まず、抜ける者咎めず、です。
+@chara_hide buchou 1
+@goto qa2
+[a2-3]
+@chara_show buchou a.png 1
+どうも過去に無線部が存在していたらしいです。実は、部室に「JA8YCX」のステッカーが貼られています。
+過去の無線部が使用していた呼出符号と思われます。
+設立当初の先輩に聞いたことろ、現在の無線部とは一切関係ないそうです。
+@chara_hide buchou 1
+@goto qa2
+[a2-4]
+@chara_show buchou a.png 1
+中学や高校に比べて、顧問の干渉は格段に減っていると思います。
+部の運営は、学生によって行われており全ての行動は学生が決定しています。
+顧問のサインが必要だったりするものは、ごくわずかです。
+@chara_hide buchou 1
+@goto qa2
+
