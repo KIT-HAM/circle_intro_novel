@@ -18,7 +18,6 @@
 @background_image room_c.jpg
 @html <div style="padding:1em;color:#fff;"><h1>北見工大無線部</h1></div>
 @<button> goto="game_start" text="スタート" class="black" style="width:15em;font-size:1.5em;"
-@<button> goto="member" text="部員紹介" class="black" style="width:15em;margin-top:1em;font-size:1.5em;"
 @<button> goto="q_and_a" text="よくある質問" class="black" style="width:15em;margin-top:1em;font-size:1.5em;"
 @<button> menu="load" text="続きから" class="black" style="width:15em;margin-top:1em;font-size:1.5em;"
 @stop
@@ -63,17 +62,6 @@
 
 
 @chara_hide buchou 1
-@goto title
-
-;-----------------------------------------------------------------------
-;部員紹介
-;このセクションに追記します。キャラの表示はstatic/chara/ 以下に透過png画像を用意します
-;-----------------------------------------------------------------------
-[member]
-@clear
-@menu_button true
-#
-この企画は中止になりました。すいません。
 @goto title
 
 ;-----------------------------------------------------------------------
