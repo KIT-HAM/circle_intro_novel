@@ -327,10 +327,9 @@ def start_build(deb=False, web_bw=False, nest={"first":True,"file":entry_point_g
 		# @制御命令
 		elif f1 == "@" and len(row) > 1:
 			#手動マクロ
-			while (p:=subrpos("SERIF(", ")", row)) != "":
-				row = row.replace("SERIF("+p+")", "'"+"','".join(split_with_html(ruby(p)))+"'")
-			if subrpos("[[GOTO ", "]]", row) != "":
-				g = subrpos("[[GOTO ", "]]", row)
+			while (p:=subrpos("SERIF(", ")", f2)) != "":
+				f2 = f2.replace("SERIF("+p+")", "'"+"','".join(split_with_html(ruby(p)))+"'")
+			while (g:=subrpos("[[GOTO ", "]]", f2)) != "":
 				if g not in p_label:
 					return e_fmt(e_fatl,"未定義ラベル/label '"+g+"' is not defined",row_id,fname)
 			f2l = f2.split(" ")
@@ -814,6 +813,12 @@ def start_build(deb=False, web_bw=False, nest={"first":True,"file":entry_point_g
 				page_list[i] = page_list[i].replace(rp, str(label[ln]))
 			else:
 				return e_fmt(e_fatl,"label "+ln+" is not defined",0,fname)
+	while (ln:=subrpos("[[GOTO ","]]", replace["METHOD"])) != "":
+		rp = "[[GOTO "+ln+"]]"
+		if ln in label:
+			replace["METHOD"] = replace["METHOD"].replace(rp, str(label[ln]))
+		else:
+			return e_fmt(e_fatl,"label "+ln+" is not defined",0,fname)
 	msg = e_fmt(e_none,"コンパイル完了。/compile is successed.",0,fname)
 	if not nest["first"]:
 		return msg #mainじゃなければ次へ
@@ -876,7 +881,10 @@ def start_build(deb=False, web_bw=False, nest={"first":True,"file":entry_point_g
 		js = remove_comment_rows(js, "<debug>","</debug>")
 	#出力先の初期化
 	if os.path.exists(export_dir):
-		shutil.rmtree(export_dir)
+		try:
+			shutil.rmtree(export_dir)
+		except:
+			return e_fmt(e_fatl,"消せないファイルがあります/Could not reset a result_dir.",0,fname)
 	os.mkdir(export_dir)
 	#htmlにリンク
 	html = html.replace("{JS}", js)
