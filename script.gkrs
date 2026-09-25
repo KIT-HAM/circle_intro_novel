@@ -17,7 +17,7 @@
 @serif_hide
 @background_image room_c.jpg
 @html <div style="padding:1em;color:#fff;"><h1>北見工大無線部</h1></div>
-@<button> goto="game_start" text="よくわかる無線部" class="black" style="width:15em;font-size:1.5em;"
+@<button> goto="game_start" text="無線部日記10月号" class="black" style="width:15em;font-size:1.5em;"
 @<button> goto="q_and_a" text="よくある質問" class="black" style="width:15em;margin-top:1em;font-size:1.5em;"
 @<button> menu="load" text="続きから" class="black" style="width:15em;margin-top:1em;font-size:1.5em;"
 @stop
@@ -33,74 +33,7 @@
 @chara_show buchou a.png 1
 
 #buchou
-新入生の皆様、ご入学おめでとうございます！
-
-;ホムペ公開時は名前を伏せるが、新入生向け録画では実名を出す
-私は、アマチュア無線部の部長です。
-
-私たち無線部は、活動開始から<b>|1年《・・》</b>が経ちました。まだまだ|黎明期《れいめいき》です。
-
-では、これから皆様にその黎明期をお見せします。
-@chara_hide buchou 1
-@serif_hide
-@close_section
-
-;生協に続く廊下
-@background_image rouka_s.jpg 1
-@close_section
-@chara_show buchou a.png
-まず初めに、部室を紹介します。今、見えているのが、図書館の生協へ続く廊下です。ここを真っすぐ進むと。。。
-@serif_hide
-@chara_hide buchou 1
-@close_section
-@background_image seikyo.jpg 1
-@chara_show buchou a.png
-左に生協がありますね？　先の廊下を出て右折しました。左側に注目しながら、このまま進みましょう。
-@serif_hide
-@chara_hide buchou 1
-@close_section
-@background_image circle.jpg 1
-@chara_show buchou a.png
-階段が見えたら、昇って右に行くと、この建物が見えるはずです。これがサークル棟です。
-この中に入って、一番最初の角を右に奥まで進み、左の扉を空けると.....
-@serif_hide
-@chara_hide buchou 1
-@close_section
-@background_image room_c.jpg 1
-@chara_show buchou a.png 1
-これが無線部の部室です。これは、去年の10月に撮影しましたが、最初はもっとすっからかんでした。
-@serif_hide
-@background_image room_2025-5.jpg 1
-@close_section
-これが、去年の5月に撮影した部室です。見ての通り、広々としております。
-なに？ 撮影位置が違うから分からないだって？ それは申し訳ないです。
-続いて、活動記録を御覧ください。
-@serif_hide
-@chara_hide buchou
-@close_section
-@background_image none
-@html <video src="static/video/r.mp4" style="width:100%;height:auto;" mute id="v"></video>
-@eval $ID("v").play();$ID("v").addEventListener("ended",()=>{$QS("button").click();});
-@<button> goto="" text="スキップ" class="black" style="position:absolute;bottom:1em;left:1em;"
-@stop
-#buchou
-これは、ブレッドボードを使って回路を組んだときの動画でした。
-
-@clear
-@background_image study.webp 1
-こちらは、講義室を借りて勉強会をしたときの写真です。部のホームページで使っているプログラム言語PHPの勉強会ですね。
-
-@background_image room_c.jpg 1
-#buchou
-ここで疑問に思った方もいるかもしれませんが、無線をやっている活動記録は|ありません《・・・・・》。
-なぜなら、無線局の開局申請ができなかったからです。
-「北見工大の無線部」として申請するには色々と許可が必要ですが、実績が無く免許保持者も不足しているので許可がもらえませんでした。。。
-
-そこで、今年は、まず個人局で申請し実績を作り、まだ免許を取っていない部員には取得の手助けを行いたいと思います。
-
-もちろん、免許取得はお金がかかるので強制はしませんし、無線以外の活動も平行します。電子回路やプログラミングもやるのです。
-
-楽しく、ゆ～るゆる～と、活動しましょう。ご清聴ありがとうございました。
+あと三ヶ月くらいで2026年が終わってしまいますね。
 
 
 @chara_hide buchou 1
